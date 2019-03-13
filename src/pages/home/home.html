@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="senyumDifabel">
-    <ion-grid no-padding>          
+    <ion-grid no-padding>
       <ion-row no-padding>
         <ion-col col-10 no-padding text-center>
           <ion-searchbar (ionInput)="getItems($event)" placeholder="Search people..."></ion-searchbar>
@@ -16,10 +16,7 @@
 
 <ion-content class="backgroundColor">
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="arrow-dropdown"
-      pullingText="Pull to update"
-      refreshingSpinner="circles"
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to update" refreshingSpinner="circles"
       refreshingText="Updating...">
     </ion-refresher-content>
   </ion-refresher>
@@ -31,7 +28,7 @@
   </ion-fab>
 
   <h4 text-center *ngIf="nothing">Create Your First Post!</h4>
-  
+
   <div *ngIf="!post" text-center>
     <br />
     <ion-spinner></ion-spinner>
@@ -40,18 +37,18 @@
   <div *ngIf="!statusSearch">
     <div *ngFor="let data of post" class="homeCard">
       <div class="cardHeader">
-        <ion-grid no-padding>          
+        <ion-grid no-padding>
           <ion-row no-padding>
             <ion-col col-2 no-padding>
-              <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
-              <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />             
+              <img class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />
+              <img class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />
             </ion-col>
             <ion-col col-9 no-padding class="wordHeader">
               <span class="nameHeader">{{data.user_name}}</span>
               <!-- <br />
               <span class="elseHeader">VP Gojek Indonesia</span> -->
               <br />
-              <span class="elseHeader">{{data.timeline_date}}, {{data.timeline_time}}</span>                  
+              <span class="elseHeader">{{data.timeline_date}}, {{data.timeline_time}}</span>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -61,47 +58,47 @@
         <br />
 
         <!-- pakai slider aja kalau gambar lebih dari satu -->
-        <img  class="pictContent" *ngIf="data.timeline_photo" [src]="data.timeline_photo" />
+        <img class="pictContent" *ngIf="data.timeline_photo" [src]="data.timeline_photo" />
       </div>
       <div class="cardFooter">
         <span>{{data.like}} likes </span>
         <span>.</span>
         <span> {{data.comments}} comment</span>
         <hr>
-        <ion-grid no-padding>          
-            <ion-row no-padding>
-              <ion-col col-4 no-padding>
-                <button (click)="openComment(data)" ion-button color="gray" clear icon-left block class="buttonCustom">
-                  <ion-icon name="md-thumbs-up"></ion-icon>
-                  <span class="buttonWord">&nbsp;Like</span>
-                </button>  
-                <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
+        <ion-grid no-padding>
+          <ion-row no-padding>
+            <ion-col col-4 no-padding>
+              <button (click)="openComment(data)" ion-button color="gray" clear icon-left block class="buttonCustom">
+                <ion-icon name="md-thumbs-up"></ion-icon>
+                <span class="buttonWord">&nbsp;Like</span>
+              </button>
+              <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
                   <ion-icon name="md-thumbs-up"></ion-icon>
                   <span class="buttonWord">&nbsp;Like</span>
                 </button>             -->
-              </ion-col>
-              <ion-col col-4 no-padding>
-                <button (click)="openComment(data)" ion-button color="gray" clear icon-left block class="buttonCustom">
-                  <ion-icon name="md-text"></ion-icon>
-                  <span class="buttonWord">&nbsp;Comment</span>
-                </button>   
-                <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
+            </ion-col>
+            <ion-col col-4 no-padding>
+              <button (click)="openComment(data)" ion-button color="gray" clear icon-left block class="buttonCustom">
+                <ion-icon name="md-text"></ion-icon>
+                <span class="buttonWord">&nbsp;Comment</span>
+              </button>
+              <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
                   <ion-icon name="md-text"></ion-icon>
                   <span class="buttonWord">&nbsp;Comment</span>
                 </button>          -->
-              </ion-col>
-              <ion-col col-4 no-padding>
-                <button (click)="share(data)" ion-button color="gray" clear icon-left block class="buttonCustom">
-                  <ion-icon name="md-share"></ion-icon>
-                  <span class="buttonWord">&nbsp;Share</span>
-                </button>    
-                <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
+            </ion-col>
+            <ion-col col-4 no-padding>
+              <button (click)="share(data)" ion-button color="gray" clear icon-left block class="buttonCustom">
+                <ion-icon name="md-share"></ion-icon>
+                <span class="buttonWord">&nbsp;Share</span>
+              </button>
+              <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
                   <ion-icon name="md-share"></ion-icon>
                   <span class="buttonWord">&nbsp;Share</span>
                 </button>                     -->
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </div>
     </div>
 
@@ -109,17 +106,17 @@
 
   <div *ngIf="statusSearch">
     <div *ngFor="let data of list_search">
-      <div *ngIf="data.user_id != user_id"  class="cardContact" no-padding (click)="openProfile(data)">
-        <ion-grid no-padding>          
-          <ion-row >
+      <div *ngIf="data.user_id != user_id" class="cardContact" no-padding (click)="openProfile(data)">
+        <ion-grid no-padding>
+          <ion-row>
             <ion-col col-2 no-padding>
-              <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
-              <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />  
+              <img class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />
+              <img class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />
             </ion-col>
             <ion-col col-9 no-padding class="wordHeader">
               <span class="nameHeader">{{data.user_name}}</span>
               <br />
-              <span *ngIf="data.user_job" class="elseHeader">{{data.user_job}}</span>                
+              <span *ngIf="data.user_job" class="elseHeader">{{data.user_job}}</span>
             </ion-col>
           </ion-row>
         </ion-grid>

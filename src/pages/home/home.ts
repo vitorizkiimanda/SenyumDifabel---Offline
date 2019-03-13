@@ -47,6 +47,21 @@ export class HomePage {
     }
   ]
 
+  dataPeople = [
+    {
+      user_id : "1",
+      user_name : "Siti Mainmumah",
+      user_photo : "https://image.flaticon.com/icons/svg/1498/1498552.svg",
+      user_job : "Programmer"
+    },
+    {
+      user_id : "2",
+      user_name : "Budi Woseto",
+      user_photo : "https://image.flaticon.com/icons/svg/1498/1498552.svg",
+      user_job : "Programmer"
+    }
+  ]
+
   constructor(
     public navCtrl: NavController,
     private superTabsCtrl: SuperTabsController,
@@ -109,19 +124,21 @@ export class HomePage {
   }
 
   getusers() {
-    this.data.getOriginalPassword().then((password) => {
-      let headers = new Headers({ 'Authorization': 'Basic ' + btoa(this.user_email + ':' + password) });
-      this.http.get(this.data.BASE_URL + "auth/getusers", { headers: headers }).subscribe(data => {
-        let response = data.json();
-        console.log(response);
-        // alert(response)
-        this.people = response;
+    // this.data.getOriginalPassword().then((password) => {
+    //   let headers = new Headers({ 'Authorization': 'Basic ' + btoa(this.user_email + ':' + password) });
+    //   this.http.get(this.data.BASE_URL + "auth/getusers", { headers: headers }).subscribe(data => {
+    //     let response = data.json();
+    //     console.log(response);
+    //     // alert(response)
+    //     this.people = response;
 
-      }, err => {
-        console.log("error cui :", err);
+    //   }, err => {
+    //     console.log("error cui :", err);
 
-      });
-    });
+    //   });
+    // });
+    
+    this.people = this.dataPeople
   }
 
   getNotifCount(data) {
