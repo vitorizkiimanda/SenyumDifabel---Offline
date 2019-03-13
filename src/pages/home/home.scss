@@ -1,0 +1,103 @@
+page-home {
+
+    .backgroundColor{
+        background-color:#d2d3d4; 
+    }
+
+    .ButtonRight{
+        color: white;
+        font-size: 2em;
+        position: relative;
+        top: 0.35em;
+    }
+
+    .homeCard{
+        background-color: white;
+        margin-bottom: 2vw;
+        padding : 2vw 4vw;
+    }
+
+    .pictHeader{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .wordHeader{
+        margin-top: 1vw;
+        margin-left: 2vw;
+    }
+
+    .nameHeader{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+        
+        text-overflow: ellipsis; 
+        overflow: hidden; 
+        white-space: nowrap;
+    }
+
+    .elseHeader{
+        font-size: 1em;
+        color: gray;
+    }
+
+    .wordContent{
+        font-size: 1em;
+        color: #222;
+    }
+
+    .pictContent{
+        max-width: 90vw;
+    }
+
+    .cardFooter{
+        margin-top: 2vw;
+        font-size: 1em;
+        font-weight: 700;
+        color: gray;
+    }
+
+    .buttonWord{
+        text-transform: capitalize;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: gray;
+    }
+
+    .buttonCustom{
+         height: 2.5em !important;
+    }
+
+    .counter{
+        color: white;
+        background-color: #cc2323;
+        padding: 2px 5px;
+        border-radius: 5px; 
+    }
+
+
+
+    //contact
+    .cardContact{
+        background-color: white;
+        padding : 2vw 4vw;
+    }
+    
+    .pictHeader{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .wordHeader{
+        margin-top: 2.5vw;
+        margin-left: 2vw;
+    }
+
+    .elseHeader{
+        font-size: 1em;
+        color: gray;
+    }
+
+
+}

@@ -1,0 +1,38 @@
+page-follow {
+    .invisibleButton {
+        height:10px;
+        width:60px;
+    }
+
+    
+    .pictHeader{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .wordHeader{
+        margin-top: 2vw;
+        margin-left: 1vw;
+    }
+
+    .nameHeader{
+        font-size: 1em;
+        color: #222;
+    }
+
+    .elseHeader{
+        font-size: 1em;
+        color: gray;
+    }
+    
+    .buttonNotification{
+        margin-top: 20%;
+    }
+    
+    .buttonWord{
+        text-transform: capitalize;
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+}

@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar color="senyumDifabel" text-right>
+    <span (click)="option()" class="buttonMore"><ion-icon name="md-more"></ion-icon></span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <iframe 
+    width="100%"
+    height="auto"
+    [src]="url ? url : null"
+    (load)="url ? handleIFrameLoadEvent() : null"
+    frameborder="0">
+  </iframe>
+</ion-content>
+  

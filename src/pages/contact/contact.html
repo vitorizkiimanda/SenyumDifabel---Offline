@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="senyumDifabel">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search contact..."></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngFor="let data of people" class="cardContact">
+    <ion-grid no-padding>          
+      <ion-row no-padding (click)="openChat(data)">
+        <ion-col col-2 no-padding>
+          <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
+          <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />         
+        </ion-col>
+        <ion-col col-9 no-padding class="wordHeader">
+          <span class="nameHeader">{{data.user_name}}</span>
+          <br />
+          <span class="elseHeader">{{data.user_job}}</span>                
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

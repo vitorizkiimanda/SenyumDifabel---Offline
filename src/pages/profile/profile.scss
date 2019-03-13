@@ -1,0 +1,278 @@
+page-profile {
+
+    .backgroundColor{
+        background-color:#d2d3d4; 
+    }
+
+    .ButtonSetting{
+        color: white;
+        font-size: 2em;
+        padding-top: 1vw;
+    }
+
+    .pictLogo{
+        height: 2em;
+        margin-top: 1vw;
+        margin-left: 2vw;
+    }
+
+    .pictCover{
+        position:relative;
+        z-index:1000; 
+        width: 100vw;
+        height: 17vh;
+    }
+
+    .pictProfile{
+        width: 40vw;
+        border: solid 3px #2c384e;
+        border-radius: 100%;
+        display: block;
+        margin: auto;
+
+        position: relative;
+        z-index:2000;
+    }
+
+    .mainProfile{
+        background-color: white;
+        border-radius: 2.5%;
+
+        position: relative;
+        bottom: 12.5vw;
+
+        margin: 4vw 4vw 0vw 4vw;
+        padding: 0 2vw 2vw 2vw;
+    }
+
+    .textProfile{
+        margin-top: 2vw;
+    }
+
+    .name{
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .position{
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .location{
+        font-size: 1em;
+        font-weight: 500;
+        color: gray;
+    }
+
+    .description{
+        margin-top: 1vw;
+        font-size: 1em;
+        color: #222;
+    }
+
+    .editIcon{
+        font-size: 2em;
+        color: #2c384e;
+
+        float: right;
+
+        position: relative;
+        top: 10vw;
+        right: 2vw;
+    }
+
+    .detailProfile{
+        position: relative;
+        bottom: 10vw;
+
+        background-color: white;
+    }
+
+    .numberHeader{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .textHeader{
+        font-size: 0.9em;
+        font-weight: 450;
+        color: #222;
+    }
+
+    .contentHeader{
+        margin: 2vw 0;
+    }
+
+    .contentCenter{
+        border-left: solid 1px rgba(128, 128, 128, 0.25);
+        border-right: solid 1px rgba(128, 128, 128, 0.25); 
+    }
+
+    .buttonDiv{
+        margin: 0vw 10vw;
+    }
+
+    .buttonCustom{
+        height: 2.5em !important;
+    }
+
+    .buttonAdd{
+        height: 2.5em !important;
+        border: solid 2px #2c384e;
+        position: relative;
+        bottom: 2vw;
+    }
+
+    .buttonWordCV{
+        text-transform: capitalize;
+        font-size: 1.5em;
+    }
+
+    .tabProfile{
+        margin-top: 4vw;
+    }
+
+    .textTabActive{
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #2c384e;
+        // margin: 0 ;
+        border-bottom: solid 5px #2c384e;
+    }
+
+    .textTab{
+        font-size: 0.9em;
+        font-weight: 500;
+        color: gray;
+        // margin: 0 ;
+        border-bottom: solid 5px gray;
+    }
+
+    .tabsProfileContent{
+        margin-top: 3vw;
+        padding: 0 2vw;
+    }
+
+    .pictContent{
+        width: 100vw;
+    }
+
+    .wordContent{
+        padding-left: 1vw;
+        
+        text-overflow: ellipsis; 
+        overflow: hidden; 
+        white-space: nowrap;
+    }
+
+    .headContent{
+        font-size: 0.9em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .subheadContent{
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .time{
+        font-size: 0.8em;
+        font-weight: 300;
+        color: gray;
+    }
+
+    .marginBottom{
+        margin-bottom: 2vw;
+    }
+
+
+    .text-md-senyumDifabel{
+        text-transform: capitalize;
+        font-size: 0.85em;
+    }
+
+
+
+
+    //my timeline
+
+    .ButtonRight{
+        color: white;
+        font-size: 2em;
+        position: relative;
+        top: 0.35em;
+    }
+
+    .homeCard{
+        background-color: white;
+        margin-bottom: 2vw;
+        padding : 2vw 4vw;
+
+        position: relative;
+        bottom: 5vw;
+    }
+
+    .pictHeader{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .wordHeader{
+        margin-top: 1vw;
+        margin-left: 2vw;
+    }
+
+    .nameHeader{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .elseHeader{
+        font-size: 1em;
+        color: gray;
+    }
+
+    .wordContent{
+        font-size: 1em;
+        color: #222;
+    }
+
+    .pictContentTimeline{
+        max-width: 90vw;
+    }
+
+    .cardFooter{
+        margin-top: 2vw;
+        font-size: 1em;
+        font-weight: 700;
+        color: gray;
+    }
+
+    .buttonWord{
+        text-transform: capitalize;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: gray;
+    }
+
+    .buttonCustom{
+         height: 2.5em !important;
+    }
+
+    .buttonMore{
+        font-size: 1.5em;
+        color: gray;
+
+        position: absolute;
+        right: -1em;
+
+    }
+
+}

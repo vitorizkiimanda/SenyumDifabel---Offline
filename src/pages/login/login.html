@@ -1,0 +1,63 @@
+<ion-content padding class="background">
+
+  <ion-list class="form-list" inset>
+
+    <img src="assets/imgs/logotrans.png" class="pictLogo" />
+
+    <form [formGroup]="authForm">
+
+      <ion-item class="form-input first-input" no-lines>
+        <ion-label>
+          <ion-icon class="icon-size" ios="ios-mail" md="md-mail"></ion-icon>
+        </ion-label>
+        <ion-input class="text-input" formControlName="email" type="email" placeholder="Email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="alert"
+        *ngIf="!authForm.controls.email.valid  && (authForm.controls.email.dirty || submitAttempt)">
+        <p class="text-error">Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item class="form-input">
+        <ion-label>
+          <ion-icon class="icon-size" ios="ios-lock" md="md-lock"></ion-icon>
+        </ion-label>
+        <ion-input class="text-input" formControlName="password" type="{{status}}" placeholder="Password" required>
+        </ion-input>
+        <button class="tombol" [hidden]="lihat == false" (click)="showPassword()" ion-button clear type="button"
+          item-right>
+          <ion-icon name="md-eye" class='icon-size'></ion-icon>
+        </button>
+        <button class="tombol" [hidden]="lihat == true" (click)="hidePassword()" ion-button clear type="button"
+          item-right>
+          <ion-icon name="md-eye-off" class='icon-size'></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item class="alert"
+        *ngIf="!authForm.controls.password.valid  && (authForm.controls['password'].errors?.minlength || submitAttempt)">
+        <p class="text-error">Please enter minimum 8 Digits</p>
+      </ion-item>
+
+      <ion-item class="alert"
+        *ngIf="!authForm.controls.password.valid  && (authForm.controls['password'].errors?.maxlength || submitAttempt)">
+        <p class="text-error">Please enter maximum 32 Digits</p>
+      </ion-item>
+
+      <button ion-button block class="login-button login-color" (click)="login()"
+        [disabled]="!authForm.valid">Login</button>
+
+    </form>
+
+  </ion-list>
+
+  <p class="text-center"><a class="forget">Forgot Password?</a></p>
+
+</ion-content>
+
+<ion-footer class="background-footer">
+  <ion-navbar>
+    <p class="footer-text">Don't Have an Account? <a class="register-color" (click)="gotoRegisterPage()">REGISTER</a>
+    </p>
+  </ion-navbar>
+</ion-footer>

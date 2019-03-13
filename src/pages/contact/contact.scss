@@ -1,0 +1,28 @@
+page-contact {
+
+    .cardContact{
+        background-color: white;
+        padding : 2vw 4vw;
+    }
+    
+    .pictHeader{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .wordHeader{
+        margin-top: 2.5vw;
+        margin-left: 2vw;
+    }
+
+    .nameHeader{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .elseHeader{
+        font-size: 1em;
+        color: gray;
+    }
+}

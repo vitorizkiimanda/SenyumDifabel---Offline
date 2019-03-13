@@ -1,0 +1,82 @@
+
+<ion-content padding class="background">
+    <!-- register Page Start -->
+    <ion-list class="form-list" inset>
+      <img src="assets/imgs/logotrans.png" class="pictLogo"/>
+  
+      <form [formGroup]="registerForm">      
+      
+        <ion-item class="form-input first-input" no-lines>
+          <ion-label><ion-icon class="icon-size" md="md-person"></ion-icon></ion-label>
+          <ion-input class="text-input" type="text" formControlName="username" placeholder="Name"></ion-input>
+        </ion-item>
+  
+        <ion-item class="alert" *ngIf="!registerForm.controls.username.valid  && (registerForm.controls['username'].errors?.minlength || submitAttempt)">
+          <p class="text-error">Please enter minimum 3 Digits</p>
+        </ion-item>
+  
+        <ion-item class="alert" *ngIf="!registerForm.controls.username.valid  && (registerForm.controls['username'].errors?.maxlength || submitAttempt)">
+          <p class="text-error">Please enter maximum 32 Digits</p>
+        </ion-item>
+        
+        <ion-item class="form-input" no-lines>
+          <ion-label><ion-icon class="icon-size" ios="ios-mail" md="md-mail"></ion-icon></ion-label>
+          <ion-input class="text-input" type="email" formControlName="email" placeholder="Email"></ion-input>
+        </ion-item>
+  
+        <ion-item class="alert" *ngIf="!registerForm.controls.email.valid  && (registerForm.controls.email.dirty || submitAttempt)">
+          <p class="text-error">Please enter a valid email.</p>
+        </ion-item>
+  
+        <ion-item class="form-input" no-lines>
+          <ion-label><ion-icon class="icon-size" ios="ios-lock" md="md-lock"></ion-icon></ion-label>
+          <ion-input class="text-input" type="{{status}}" formControlName="password" placeholder="Password" required></ion-input>
+          <button class="tombol" [hidden]="lihatPassword == false" (click)="showPassword()" ion-button clear type="button" item-right><ion-icon name="md-eye" class='icon-size'></ion-icon> </button>
+          <button class="tombol" [hidden]="lihatPassword == true" (click)="hidePassword()" ion-button clear type="button" item-right><ion-icon name="md-eye-off" class='icon-size'></ion-icon> </button>
+        </ion-item>
+  
+        <ion-item class="alert" *ngIf="!registerForm.controls.password.valid  && (registerForm.controls['password'].errors?.minlength || submitAttempt)">
+          <p class="text-error">Please enter minimum 8 Digits</p>
+        </ion-item>
+  
+        <ion-item class="alert" *ngIf="!registerForm.controls.password.valid  && (registerForm.controls['password'].errors?.maxlength || submitAttempt)">
+          <p class="text-error">Please enter maximum 32 Digits</p>
+        </ion-item>
+  
+        <ion-item class="form-input">
+          <ion-label><ion-icon class="icon-size" ios="ios-lock" md="md-lock"></ion-icon></ion-label>
+          <ion-input class="text-input" type="password" formControlName="confirmPassword" placeholder="Confirm Password" required (ionChange)="confirmPass()"></ion-input>
+        </ion-item>
+  
+        <!-- <ion-item class="alert" *ngIf="registerForm.controls.confirmPassword.touched && registerForm.hasError('passMismatch') && registerForm.controls.password.valid && submitAttempt">
+          <p class="text-error">Password Mismatch</p>
+        </ion-item> -->
+  
+        <ion-item class="alert" [hidden]="!mismatch">
+          <p class="text-error">Password Mismatch</p>
+        </ion-item>
+  
+        <button ion-button block class="register-button register-color" (click)="register()" [disabled]="!registerForm.valid">register</button>
+        
+      </form>
+    </ion-list>
+     
+    <!-- <div>
+      <div>
+        <p class="text-center text-color">------------ OR CONNECT WITH ------------</p>
+      </div>
+      <div class="social-icon text-center">
+        <img class="facebook-icon" src="https://positivetransitioning.org/wp-content/uploads/2017/07/ICONCRAZE-COM-Facebook-Icon-PNG.png" alt="">
+        <img class="google-icon" src="https://images.vexels.com/media/users/3/137283/isolated/preview/8ca486faebd822ddf4baf00321b16df1-google-icon-logo-by-vexels.png" alt="">
+      </div>    
+    </div> -->
+  
+    <!-- register Page End -->
+  </ion-content>
+  
+  <ion-footer class="background-footer">
+    <ion-navbar hideBackButton>
+      <p class="footer-text">Already Have an Account? <a class="login-color" (click)="gotoLoginPage()">LOG IN</a></p>
+    </ion-navbar>
+  </ion-footer>
+  

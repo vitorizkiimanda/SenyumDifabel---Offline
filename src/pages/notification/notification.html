@@ -1,0 +1,181 @@
+<ion-header >
+
+  <ion-navbar color="senyumDifabel">
+      <ion-title text-center>Notification<button ion-button clear class="invisibleButton"></button></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div>
+    <div >
+      <div *ngFor="let data of notifications; let i=index;" [class.evenNotificationCard]="(i%2 == 0)" [class.oddNotificationCard]="(i%2 != 0)">
+        <ion-grid *ngIf="data.type==1 || data.type==2 || data.type==3 || data.type==4" no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile(data)">
+                <img  class="pict" *ngIf="data.notif_photo" [src]="data.notif_photo" />    
+                <img  class="pict" *ngIf="!data.notif_photo" src="assets/imgs/profile.png" />
+              </div>
+              <!-- <span class="time">20h</span>                   -->
+            </ion-col>
+            <ion-col col-10 no-padding class="words">
+              <span class="word"><span (click)="openProfile(data)">{{data.notif_name}}</span> <b>invited</b> you to interview</span>
+              <br />
+              <img  class="word descriptionImage" src="assets/imgs/bukalapak.png" /><span class="description"> Vice President Interview</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+        <ion-grid *ngIf="data.type==5" no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile(data)">
+                <img  class="pict" *ngIf="data.notif_photo" [src]="data.notif_photo" />    
+                <img  class="pict" *ngIf="!data.notif_photo" src="assets/imgs/profile.png" />
+              </div>
+              <!-- <span class="time">20h</span>                   -->
+            </ion-col>
+            <ion-col col-10 no-padding class="words">
+              <span class="word"><span (click)="openProfile(data)">{{data.notif_name}}</span> <b>following</b> you</span>
+              <br />
+              <button (click)="follow(data)" *ngIf="data.status==0" class="buttonNotification" class="buttonNotification" ion-button color="senyumDifabel" small>
+                <span class="buttonWord">Follow</span>
+              </button>
+              
+              <button (click)="unfollow(data)" *ngIf="data.status==1" class="buttonNotification" class="buttonNotification" ion-button color="senyumDifabel" small outline>
+                <span class="buttonWord">Following</span>
+              </button>  
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="data.type==6" no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile(data)">
+                <img  class="pict" *ngIf="data.notif_photo" [src]="data.notif_photo" />    
+                <img  class="pict" *ngIf="!data.notif_photo" src="assets/imgs/profile.png" />
+              </div>
+              <!-- <span class="time">20h</span>                   -->
+            </ion-col>
+            <ion-col (click)="openPost(data)" col-10 no-padding class="words">
+              <span class="word"><span>{{data.notif_name}}</span> <b>likes</b> your post</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="data.type==7" no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile(data)">
+                <img  class="pict" *ngIf="data.notif_photo" [src]="data.notif_photo" />    
+                <img  class="pict" *ngIf="!data.notif_photo" src="assets/imgs/profile.png" />
+              </div>
+              <!-- <span class="time">20h</span>                   -->
+            </ion-col>
+            <ion-col (click)="openPost(data)" col-10 no-padding class="words">
+              <span class="word"><span>{{data.notif_name}}</span> <b>comments</b> your post</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+<!--       
+      <div class="evenNotificationCard">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile()">
+                <img  class="pict" src="assets/imgs/alamanda.jpg" />
+              </div>
+              <span class="time">20h</span>                  
+            </ion-col>
+            <ion-col col-10 no-padding class="words">
+              <span class="word"><span (click)="openProfile()">Annisa Ramadhani</span> <b>invited</b> you to interview</span>
+              <br />
+              <img  class="word descriptionImage" src="assets/imgs/bukalapak.png" /><span class="description"> Vice President Interview</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile()">
+                <img  class="pict" src="assets/imgs/alamanda.jpg" />
+              </div>
+              <span class="time">20h</span>                  
+            </ion-col>
+            <ion-col col-10 no-padding class="words">
+              <span class="word"><span (click)="openProfile()">Annisa Ramadhani</span> <b>following</b> you</span>
+              <br />
+              <button (click)="follow()" *ngIf="statusFollow" class="buttonNotification" class="buttonNotification" ion-button color="senyumDifabel" small>
+                <span class="buttonWord">Follow</span>
+              </button>
+              
+              <button (click)="unfollow()" *ngIf="!statusFollow" class="buttonNotification" class="buttonNotification" ion-button color="senyumDifabel" small outline>
+                <span class="buttonWord">Following</span>
+              </button>  
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile()">
+                <img  class="pict" src="assets/imgs/alamanda.jpg" />
+              </div>
+              <span class="time">20h</span>                  
+            </ion-col>
+            <ion-col (click)="openPost()" col-10 no-padding class="words">
+              <span class="word"><span>Annisa Ramadhani</span> <b>likes</b> your post</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding text-center>
+              <div (click)="openProfile()">
+                <img  class="pict" src="assets/imgs/alamanda.jpg" />
+              </div>
+              <span class="time">20h</span>                  
+            </ion-col>
+            <ion-col (click)="openPost()" col-10 no-padding class="words">
+              <span class="word"><span>Annisa Ramadhani</span> <b>comments</b> your post</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div> -->
+
+
+
+
+
+    <!-- <div class="oddNotificationCard">
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col col-2 no-padding text-center>
+            <div (click)="openProfile()">
+              <img  class="pict" src="assets/imgs/alamanda.jpg" />
+            </div>
+            <span class="time">20h</span>                  
+          </ion-col>
+          <ion-col col-10 no-padding class="words">
+            <span class="word">Congratulation for your <b>2 year at Bukalapak</b></span>
+            <br />
+            <button class="buttonNotification" ion-button color="senyumDifabel" small>
+              <span class="buttonWord">Celebrate</span>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div> -->
+    </div>
+  </div>
+
+</ion-content>

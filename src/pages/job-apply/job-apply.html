@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="senyumDifabel">
+    <img src="assets/imgs/logotrans.png" class="pictLogo"/>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+  <div class="mainProfile">
+    <img  class="pictProfile" *ngIf="user_photo" [src]="user_photo" />    
+    <img  class="pictProfile" *ngIf="!user_photo" src="assets/imgs/profile.png" /> 
+    <div class="textProfile" text-center>
+      <span class="name">{{user_name}}</span>
+      <br />
+      <span class="position">{{user_job}}</span>
+      <br />
+      <span class="location">{{user_address}}</span>
+    </div>
+    <!-- <button ion-button block color="pink" class="buttonCustom"><span class="buttonWord">Upload CV</span></button>
+    <button ion-button (click)="openCV()" block outline color="pink" class="buttonCustom"><span class="buttonWord">Open CV</span></button> -->
+    <br />
+    <button (click)="postApply()" ion-button block color="senyumDifabel" class="buttonCustom" icon-right>
+      <span class="buttonWord">Apply</span>
+      <ion-icon name="md-send"></ion-icon>
+    </button>
+    <br />
+  </div>
+</ion-content>

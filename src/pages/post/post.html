@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="senyumDifabel">
+    <ion-title text-center>Post<button ion-button clear class="invisibleButton"></button></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid no-padding>          
+    <ion-row no-padding>
+      <ion-col col-2 no-padding text-center>
+        <div>
+          <img  class="pict" *ngIf="data.user_photo" [src]="data.user_photo" />    
+          <img  class="pict" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />      
+        </div>             
+      </ion-col>
+      <ion-col col-10 no-padding class="words">     
+        
+        <img *ngIf="image" class="pictContent" [src]="image" /> 
+        <ion-textarea type="text" [(ngModel)]="description" autosize placeholder="share an article, post, or information" maxlength="1000"></ion-textarea>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="footerColor">
+  <ion-grid no-padding>          
+    <ion-row no-padding>
+      <ion-col col-6 no-padding>
+        <!-- <button class="buttonNotification" ion-button clear color="senyumDifabel" small>
+          <ion-icon class="buttonIcon" name="ios-at-outline"></ion-icon>
+        </button> -->
+        <button (click)="updatePicture()" class="buttonNotification" ion-button clear color="senyumDifabel" small>
+          <ion-icon class="buttonIcon" name="md-image"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6 no-padding text-right>      
+        <button (click)="post()" class="buttonNotification buttonPost" ion-button icon-right color="senyumDifabel" small>
+          <span class="buttonWord">Post</span>
+          <ion-icon name="md-send"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

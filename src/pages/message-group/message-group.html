@@ -1,0 +1,103 @@
+<ion-header>
+
+    <ion-navbar color="senyumDifabel">  
+      <ion-title text-center>Grup PSBO (4)<button ion-button clear class="invisibleButton"></button></ion-title>
+      <!-- <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col col-10 no-padding>    
+            <ion-title text-center><span class="Title">Grup PSBO (4)</span></ion-title>     
+          </ion-col>
+          <ion-col col-2 text-right no-padding>
+            <ion-icon color="dark" class="ButtonRight" name="md-list-box"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid> -->
+    </ion-navbar>
+  
+  </ion-header>
+
+  <ion-content class="background">
+
+      <!-- <div id="chatMessages"> -->
+        <!-- <div *ngFor="let data of chats" class="message"> | reverse; let last = last -->
+          <!-- <div [class]="data.id_receiver==id_receiver ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+            <div class="messageContent">{{data.title}}</div>
+            <div text-right class="messageTime">{{(data.send_at)?.substring(11,19)}}</div>
+          </div> -->
+          <!-- {{last ? scrollToBottom() : ''}} -->
+        <!-- </div>
+      </div> -->
+    
+      <div id="chatMessages">
+        <div class="message"><!--  | reverse; let last = last -->
+          <div class="innerMessage messageRight">
+            <div class="messageContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, similique dolorem explicabo ullam minus aliquid ea tempore laudantium aperiam sint, nobis provident ad veniam non eligendi, nihil pariatur. Commodi, nesciunt.</div>
+            <div text-right class="messageTimeRight">09.48 AM</div>
+          </div>
+          <!-- {{last ? scrollToBottom() : ''}} -->
+        </div>
+      </div>
+    
+      <div id="chatMessages">
+        <div class="message"><!--  | reverse; let last = last -->
+          <img  class="pict" src="assets/imgs/alamanda.jpg" />
+          <div class="innerMessage messageLeft">
+            <div class="messageContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aspernatur consequuntur dolorum libero. Quibusdam dolor maiores quos dicta autem doloremque necessitatibus, aspernatur nostrum corrupti earum nobis sit, explicabo saepe illum.</div>
+            <div text-right class="messageTimeLeft">09.48 AM</div>
+          </div>
+          <!-- {{last ? scrollToBottom() : ''}} -->
+        </div>
+      </div>
+
+      <div id="chatMessages">
+        <div class="message"><!--  | reverse; let last = last -->
+          <img  class="pict" src="assets/imgs/alamanda.jpg" />
+          <div class="innerMessage messageLeft">
+            <div class="messageContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aspernatur consequuntur dolorum libero. Quibusdam dolor maiores quos dicta autem doloremque necessitatibus, aspernatur nostrum corrupti earum nobis sit, explicabo saepe illum.</div>
+            <div text-right class="messageTimeLeft">09.48 AM</div>
+          </div>
+          <!-- {{last ? scrollToBottom() : ''}} -->
+        </div>
+      </div>
+
+      <div id="chatMessages">
+        <div class="message"><!--  | reverse; let last = last -->
+          <img  class="pict" src="assets/imgs/alamanda.jpg" />
+          <div class="innerMessage messageLeft">
+            <div class="messageContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aspernatur consequuntur dolorum libero. Quibusdam dolor maiores quos dicta autem doloremque necessitatibus, aspernatur nostrum corrupti earum nobis sit, explicabo saepe illum.</div>
+            <div text-right class="messageTimeLeft">09.48 AM</div>
+          </div>
+          <!-- {{last ? scrollToBottom() : ''}} -->
+        </div>
+      </div>
+
+      <div id="chatMessages">
+        <div class="message"><!--  | reverse; let last = last -->
+          <img  class="pict" src="assets/imgs/alamanda.jpg" />
+          <div class="innerMessage messageLeft">
+            <div class="messageContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aspernatur consequuntur dolorum libero. Quibusdam dolor maiores quos dicta autem doloremque necessitatibus, aspernatur nostrum corrupti earum nobis sit, explicabo saepe illum.</div>
+            <div text-right class="messageTimeLeft">09.48 AM</div>
+          </div>
+          <!-- {{last ? scrollToBottom() : ''}} -->
+        </div>
+      </div>
+    
+    </ion-content>
+    
+    <ion-footer class="footerBackground" no-padding>
+    
+      <ion-row no-padding>
+        <ion-col col-1 no-padding text-center>
+          <span class="IconCamera"><ion-icon name="md-camera"></ion-icon></span>
+        </ion-col>
+        <ion-col col-9 no-padding class="inputArea">
+          <ion-textarea (keypress)="sendChat($event.keyCode)" class="inputText" [(ngModel)]="message" name="message" placeholder="Text message.." type="text" #pesan="ngModel" required autosize></ion-textarea>
+        </ion-col>
+        <ion-col col-1 no-padding text-center>
+          <span class="IconSend"><ion-icon (click)="sendChat(13)" name="md-send" class="IconSendSize"></ion-icon></span>
+        </ion-col>
+      </ion-row>
+        
+        
+    </ion-footer>
+    

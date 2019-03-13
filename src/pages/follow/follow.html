@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-navbar color="senyumDifabel">      
+      <ion-searchbar *ngIf='choosed=="follower"' (ionInput)="getItems($event)" placeholder="Search followers..."></ion-searchbar>
+      <ion-searchbar *ngIf='choosed=="following"' (ionInput)="getItems($event)" placeholder="Search following..."></ion-searchbar>
+      <ion-title *ngIf='choosed=="company"' text-center>Company<button ion-button clear class="invisibleButton"></button></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf='choosed=="follower" || choosed=="following"' class="cardContact">
+    <h4 *ngIf='choosed=="follower"' text-center>Followers</h4>
+    <h4 *ngIf='choosed=="following"' text-center>Following</h4>
+    <hr>
+
+    
+    <div *ngIf="!statusSearch">
+
+      <ion-grid *ngIf='choosed == "following"' no-padding> 
+
+        <ion-row *ngFor="let data of people" no-padding>
+          <ion-col (click)="openProfile(data)" col-2 no-padding>
+            <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
+            <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />      
+          </ion-col>
+          <ion-col (click)="openProfile(data)" col-7 no-padding class="wordHeader">
+            <span class="nameHeader">{{data.user_name}}</span>
+            <br />
+            <span class="elseHeader">{{data.user_job}}</span>                
+          </ion-col>
+          <!-- <ion-col col-2 no-padding *ngIf="data.user_id != user_id">
+            <button (click)="follow()" *ngIf="data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small>
+              <span class="buttonWord">Follow</span>
+            </button>
+            
+            <button (click)="unfollow()" *ngIf="!data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small outline>
+              <span class="buttonWord">Following</span>
+            </button>              
+          </ion-col> -->
+        </ion-row>          
+        
+      </ion-grid>
+
+      <ion-grid *ngIf='choosed == "follower"' no-padding> 
+
+        <ion-row *ngFor="let data of people" no-padding>
+          <ion-col (click)="openProfile(data)" col-2 no-padding>
+            <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
+            <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />          
+          </ion-col>
+          <ion-col (click)="openProfile(data)" col-7 no-padding class="wordHeader">
+            <span class="nameHeader">{{data.user_name}}</span>
+            <br />
+            <span class="elseHeader">{{data.user_job}}</span>                
+          </ion-col>
+          <!-- <ion-col col-2 no-padding *ngIf="data.user_id != user_id">
+            <button (click)="follow()" *ngIf="data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small>
+              <span class="buttonWord">Follow</span>
+            </button>
+            
+            <button (click)="unfollow()" *ngIf="!data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small outline>
+              <span class="buttonWord">Following</span>
+            </button>              
+          </ion-col> -->
+        </ion-row>          
+        
+      </ion-grid>
+
+    </div>
+
+    <div *ngIf="statusSearch">
+
+      <ion-grid *ngIf='choosed == "following"' no-padding> 
+
+        <ion-row *ngFor="let data of list_search" no-padding>
+          <ion-col (click)="openProfile(data)" col-2 no-padding>
+            <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
+            <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />      
+          </ion-col>
+          <ion-col (click)="openProfile(data)" col-7 no-padding class="wordHeader">
+            <span class="nameHeader">{{data.user_name}}</span>
+            <br />
+            <span class="elseHeader">{{data.user_job}}</span>                
+          </ion-col>
+          <!-- <ion-col col-2 no-padding *ngIf="data.user_id != user_id">
+            <button (click)="follow()" *ngIf="data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small>
+              <span class="buttonWord">Follow</span>
+            </button>
+            
+            <button (click)="unfollow()" *ngIf="!data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small outline>
+              <span class="buttonWord">Following</span>
+            </button>              
+          </ion-col> -->
+        </ion-row>          
+        
+      </ion-grid>
+
+      <ion-grid *ngIf='choosed == "follower"' no-padding> 
+
+        <ion-row *ngFor="let data of list_search" no-padding>
+          <ion-col (click)="openProfile(data)" col-2 no-padding>
+            <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
+            <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />          
+          </ion-col>
+          <ion-col (click)="openProfile(data)" col-7 no-padding class="wordHeader">
+            <span class="nameHeader">{{data.user_name}}</span>
+            <br />
+            <span class="elseHeader">{{data.user_job}}</span>                
+          </ion-col>
+          <!-- <ion-col col-2 no-padding *ngIf="data.user_id != user_id">
+            <button (click)="follow()" *ngIf="data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small>
+              <span class="buttonWord">Follow</span>
+            </button>
+            
+            <button (click)="unfollow()" *ngIf="!data.statusFollow" class="buttonNotification" ion-button color="senyumDifabel" small outline>
+              <span class="buttonWord">Following</span>
+            </button>              
+          </ion-col> -->
+        </ion-row>          
+        
+      </ion-grid>
+
+    </div>
+
+  </div>
+</ion-content>

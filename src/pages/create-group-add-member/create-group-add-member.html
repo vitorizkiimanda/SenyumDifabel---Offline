@@ -1,0 +1,206 @@
+<ion-header>
+
+  <ion-navbar color="senyumDifabel">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search by name..."></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+  
+
+<ion-content>
+
+  <ion-list *ngIf="!statusSearch">
+      <ion-item no-lines>
+          <ion-label class="Content">
+            <div class="cardContact">
+              <ion-grid no-padding>          
+                <ion-row no-padding (click)="openChat()">
+                  <ion-col col-2 no-padding>
+                    <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                    <img  class="pictHeader" src="assets/imgs/alamanda.jpg" />             
+                  </ion-col>
+                  <ion-col col-9 no-padding class="wordHeader">
+                    <span class="nameHeader">Alamanda Shantika</span>           
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-label>
+          <ion-checkbox item-right [(ngModel)]="AviqahAndriani" color="senyumDifabel"></ion-checkbox>
+      </ion-item>
+      <ion-item no-lines>
+          <ion-label class="Content">
+            <div class="cardContact">
+              <ion-grid no-padding>          
+                <ion-row no-padding (click)="openChat()">
+                  <ion-col col-2 no-padding>
+                    <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                    <img  class="pictHeader" src="assets/imgs/alamanda.jpg" />             
+                  </ion-col>
+                  <ion-col col-9 no-padding class="wordHeader">
+                    <span class="nameHeader">Alamanda Shantika</span>           
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-label>
+          <ion-checkbox item-right [(ngModel)]="AviqahAndriani" color="senyumDifabel"></ion-checkbox>
+      </ion-item>
+      <ion-item no-lines>
+          <ion-label class="Content">
+            <div class="cardContact">
+              <ion-grid no-padding>          
+                <ion-row no-padding (click)="openChat()">
+                  <ion-col col-2 no-padding>
+                    <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                    <img  class="pictHeader" src="assets/imgs/alamanda.jpg" />             
+                  </ion-col>
+                  <ion-col col-9 no-padding class="wordHeader">
+                    <span class="nameHeader">Alamanda Shantika</span>           
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-label>
+          <ion-checkbox item-right [(ngModel)]="AviqahAndriani" color="senyumDifabel"></ion-checkbox>
+      </ion-item>
+      <ion-item no-lines>
+          <ion-label class="Content">
+            <div class="cardContact">
+              <ion-grid no-padding>          
+                <ion-row no-padding (click)="openChat()">
+                  <ion-col col-2 no-padding>
+                    <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                    <img  class="pictHeader" src="assets/imgs/alamanda.jpg" />             
+                  </ion-col>
+                  <ion-col col-9 no-padding class="wordHeader">
+                    <span class="nameHeader">Alamanda Shantika</span>           
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-label>
+          <ion-checkbox item-right [(ngModel)]="AviqahAndriani" color="senyumDifabel"></ion-checkbox>
+      </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="statusSearch">
+      <ion-item no-lines>
+          <ion-label class="Content">
+            <div class="cardContact">
+              <ion-grid no-padding>          
+                <ion-row no-padding (click)="openChat()">
+                  <ion-col col-2 no-padding>
+                    <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                    <img  class="pictHeader" src="assets/imgs/alamanda.jpg" />             
+                  </ion-col>
+                  <ion-col col-9 no-padding class="wordHeader">
+                    <span class="nameHeader">Alamanda Shantika</span>           
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-label>
+          <ion-checkbox item-right [(ngModel)]="AviqahAndriani" color="senyumDifabel"></ion-checkbox>
+      </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <div class="footerList">
+      <ion-scroll scrollY="true" direction="y">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+            <ion-col (click)="delete()" col-2 no-padding text-center>
+              <ion-icon color="dark" class="deleteIcon" name="md-close"></ion-icon>
+              <img  class="listPict" src="assets/imgs/logo.png" />      
+              <div class="listName">
+                nama orang orang orang
+              </div>       
+            </ion-col>
+          </ion-row>
+        </ion-grid>  
+      </ion-scroll>
+  </div>
+  <div class="footerAdd">
+      Add(xxx)
+  </div>
+</ion-footer>
+  

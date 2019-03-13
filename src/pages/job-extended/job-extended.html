@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar color="senyumDifabel">      
+      <ion-title *ngIf='choosed=="saved"' text-center>Saved Jobs<button ion-button clear class="invisibleButton"></button></ion-title>
+      <ion-title *ngIf='choosed=="applied"' text-center>Applied Jobs<button ion-button clear class="invisibleButton"></button></ion-title>
+      <ion-title *ngIf='choosed=="attended"' text-center>Interview Attended<button ion-button clear class="invisibleButton"></button></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="backgroundColor">
+
+  <div *ngIf='choosed == "saved"'>
+
+    <div *ngFor="let data of saves" class="jobCard">
+      <div class="headerJob">
+        <span class="headerText">{{data.date}}</span>
+        <ion-icon [hidden]='data.flag_bookmark == "1"' (click)="changeBookmark(data)" name="ios-bookmark-outline" class="buttonCustom"></ion-icon>
+        <ion-icon [hidden]='data.flag_bookmark == "0"' (click)="changeBookmark(data)" name="ios-bookmark" class="buttonCustom"></ion-icon>
+      </div>
+      <div (click)="openJobDetail(data)">
+        <img  class="pictHeader" src="assets/imgs/cardContent.jpg" />
+        <img  class="pictCompany" src="assets/imgs/bukalapak.png" />
+        <div class="contentJob">
+          <div>
+            <span class="company">{{data.company_name}}</span>
+            <br />
+            <span class="position">{{data.name}}</span>
+          </div>
+          <div class="detailJob">
+            <span class="skill"><ion-icon name="ios-briefcase" class="iconContent"></ion-icon>&nbsp;&nbsp;IT dan Telekomunikasi</span>
+            <br />
+            <span class="seek"><ion-icon name="ios-bowtie" class="iconContent"></ion-icon>&nbsp;&nbsp;Tuna Rungu dan Tuna Wicara</span>
+            <br />
+            <span class="location"><ion-icon name="md-pin" class="iconContent"></ion-icon>&nbsp;&nbsp;Jakarta</span>
+            <span class="readMore">Read More ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf='choosed == "applied"'>
+
+    <div *ngFor="let data of applies" class="jobCard">
+      <div class="headerJob">
+        <span class="headerText">{{data.date}}</span>
+        <ion-icon [hidden]='data.flag_bookmark == "1"' (click)="changeBookmark(data)" name="ios-bookmark-outline" class="buttonCustom"></ion-icon>
+        <ion-icon [hidden]='data.flag_bookmark == "0"' (click)="changeBookmark(data)" name="ios-bookmark" class="buttonCustom"></ion-icon>
+      </div>
+      <div (click)="openJobDetail(data)">
+        <img  class="pictHeader" src="assets/imgs/cardContent.jpg" />
+        <img  class="pictCompany" src="assets/imgs/bukalapak.png" />
+        <div class="contentJob">
+          <div>
+            <span class="company">{{data.company_name}}</span>
+            <br />
+            <span class="position">{{data.name}}</span>
+          </div>
+          <div class="detailJob">
+            <span class="skill"><ion-icon name="ios-briefcase" class="iconContent"></ion-icon>&nbsp;&nbsp;IT dan Telekomunikasi</span>
+            <br />
+            <span class="seek"><ion-icon name="ios-bowtie" class="iconContent"></ion-icon>&nbsp;&nbsp;Tuna Rungu dan Tuna Wicara</span>
+            <br />
+            <span class="location"><ion-icon name="md-pin" class="iconContent"></ion-icon>&nbsp;&nbsp;Jakarta</span>
+            <span class="readMore">Read More ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf='choosed == "attended"'>
+
+    <div *ngFor="let data of attendies" class="jobCard">
+      <div class="headerJob">
+        <span class="headerText">{{data.date}}</span>
+        <ion-icon [hidden]='data.flag_bookmark == "1"' (click)="changeBookmark(data)" name="ios-bookmark-outline" class="buttonCustom"></ion-icon>
+        <ion-icon [hidden]='data.flag_bookmark == "0"' (click)="changeBookmark(data)" name="ios-bookmark" class="buttonCustom"></ion-icon>
+      </div>
+      <div (click)="openJobDetail(data)">
+        <img  class="pictHeader" src="assets/imgs/cardContent.jpg" />
+        <img  class="pictCompany" src="assets/imgs/bukalapak.png" />
+        <div class="contentJob">
+          <div>
+            <span class="company">{{data.company_name}}</span>
+            <br />
+            <span class="position">{{data.name}}</span>
+          </div>
+          <div class="detailJob">
+            <span class="skill"><ion-icon name="ios-briefcase" class="iconContent"></ion-icon>&nbsp;&nbsp;IT dan Telekomunikasi</span>
+            <br />
+            <span class="seek"><ion-icon name="ios-bowtie" class="iconContent"></ion-icon>&nbsp;&nbsp;Tuna Rungu dan Tuna Wicara</span>
+            <br />
+            <span class="location"><ion-icon name="md-pin" class="iconContent"></ion-icon>&nbsp;&nbsp;Jakarta</span>
+            <span class="readMore">Read More ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

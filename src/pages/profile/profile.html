@@ -1,0 +1,259 @@
+<ion-header>
+    <ion-navbar color="senyumDifabel">
+        <ion-grid no-padding>          
+            <ion-row no-padding>
+              <ion-col col-10 no-padding>
+                <img src="assets/imgs/logotrans.png" class="pictLogo"/>
+              </ion-col>
+              <ion-col col-2 text-center no-padding>
+                <ion-icon (click)="openSetting()" color="dark" class="ButtonSetting" name="md-settings"></ion-icon>
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content class="backgroundColor">
+  <img  class="pictCover" src="assets/imgs/cover.JPG" />
+  <div class="mainProfile">
+    <ion-icon (click)="openProfileEdit()" color="dark" class="editIcon" name="md-create"></ion-icon>
+    <img  class="pictProfile" *ngIf="user_photo" [src]="user_photo" />    
+    <img  class="pictProfile" *ngIf="!user_photo" src="assets/imgs/profile.png" />  
+    <div class="textProfile" text-center>
+      <span class="name">{{user_name}}</span>
+      <br />
+      <span class="position">{{user_job}}</span>
+      <br />
+      <span *ngIf="!user_address || !description" class="location">Complete Your Profile!</span>
+      <span class="location">{{user_address}}</span>
+      <div class="description">
+        <span>{{description}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="detailProfile">
+    <ion-grid no-padding>          
+      <ion-row no-padding text-center>
+        <ion-col (click)="open('follower')" col-6 no-padding class="contentHeader">
+          <span class="numberHeader">{{follower}}</span>
+          <ion-spinner *ngIf="!follower && follower!=0"></ion-spinner>
+          <br />
+          <span class="textHeader">Followers</span>            
+        </ion-col>
+        <ion-col (click)="open('following')" col-6 no-padding class="contentHeader contentCenter">
+          <span class="numberHeader">{{following}}</span>
+          <ion-spinner *ngIf="!following && following!=0"></ion-spinner>
+          <br />
+          <span class="textHeader">Following</span>            
+        </ion-col>
+        <!-- <ion-col (click)="open('company')" col-4 no-padding class="contentHeader">
+          <span class="numberHeader">2</span>
+          <br />
+          <span class="textHeader">Company</span>            
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
+    <!-- <div text-center class="buttonDiv">
+      <button ion-button block color="senyumDifabel" class="buttonCustom"><span class="buttonWordCV">Upload Your CV</span></button>
+      <button (click)="openCV()" ion-button block color="senyumDifabel" class="buttonCustom" outline><span class="buttonWordCV">Open Your CV</span></button>
+    </div> -->
+
+    <super-tabs  class="tabProfile" id="mainTabs" selectedTabIndex="0" toolbarColor="senyumDifabel" toolbarBackground="white" indicatorColor="senyumDifabel" (tabSelect)="onTabSelect($event)">
+        <super-tab tabsHideOnSubPages="true" [root]="tab1Root" title="Experience" ></super-tab>
+        <super-tab tabsHideOnSubPages="true" [root]="tab2Root" title="Education" ></super-tab>
+        <super-tab tabsHideOnSubPages="true" [root]="tab3Root" title="Skill" ></super-tab>
+        <super-tab tabsHideOnSubPages="true" [root]="tab4Root" title="Achivement" ></super-tab>
+        <super-tab tabsHideOnSubPages="true" [root]="tab5Root" title="Contact" ></super-tab>
+    </super-tabs>
+
+    <!-- <div class="tabProfile" text-center>
+        <span [hidden]="experience == false" class="textTabActive">Experience</span><span [hidden]="experience == true" class="textTab" (click)="activeExperience()">Experience</span><span [hidden]="education == false" class="textTabActive">&nbsp;&nbsp;Education&nbsp;&nbsp;</span><span [hidden]="education == true" class="textTab" (click)="activeEducation()">&nbsp;&nbsp;Education&nbsp;&nbsp;</span><span [hidden]="skill == false" class="textTabActive">Featured Skill</span><span [hidden]="skill == true" class="textTab" (click)="activeSkill()">Featured Skill</span><span [hidden]="accomplishment == false" class="textTabActive">&nbsp;&nbsp;Accomplishment&nbsp;&nbsp;</span><span [hidden]="accomplishment == true" class="textTab" (click)="activeAccomplishment()">&nbsp;&nbsp;Accomplishment&nbsp;&nbsp;</span><span [hidden]="contact == false" class="textTabActive">Contact</span><span [hidden]="contact == true" class="textTab" (click)="activeContact()">Contact</span>      
+    </div> -->
+    <div class="tabsProfileContent">
+      <div [hidden]="experience == false">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col *ngFor="let data of experiences" col-6 no-padding class="marginBottom" (click)="optionExperience(data)">
+              <ion-row no-padding>
+                <ion-col col-4 no-padding>
+                  <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                  <img  class="pictContent" src="assets/imgs/experience.png" />             
+                </ion-col>
+                <ion-col col-8 no-padding class="wordContent">
+                  <span class="headContent">{{data.title}}</span>
+                  <br />
+                  <span class="subheadContent">{{data.description}}</span>
+                  <br />
+                  <span class="time">{{data.year}}</span>                  
+                </ion-col>
+              </ion-row>  
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="tabsProfileContent">
+      <div [hidden]="education == false">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col *ngFor="let data of educations" col-6 no-padding class="marginBottom" (click)="optionEducation(data)">
+              <ion-row no-padding>
+                <ion-col col-4 no-padding>
+                  <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                  <img  class="pictContent" src="assets/imgs/education.png" />             
+                </ion-col>
+                <ion-col col-8 no-padding class="wordContent">
+                  <span class="headContent">{{data.school}}</span>
+                  <br />
+                  <span class="subheadContent">{{data.major}}</span>
+                  <br />
+                  <span class="time">{{data.year}}</span>                  
+                </ion-col>
+              </ion-row>  
+            </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="tabsProfileContent">
+      <div [hidden]="skill == false">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col *ngFor="let data of skills" col-6 no-padding class="marginBottom" (click)="optionSkill(data)">
+              <ion-row no-padding>
+                <ion-col col-4 no-padding>
+                  <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                  <img  class="pictContent" src="assets/imgs/skill.png" />             
+                </ion-col>
+                <ion-col col-8 no-padding class="wordContent">
+                  <span class="headContent">{{data.skill}}</span>                
+                </ion-col>
+              </ion-row>  
+            </ion-col>
+           
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="tabsProfileContent">
+      <div [hidden]="accomplishment == false">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col *ngFor="let data of achievements" col-6 no-padding class="marginBottom" (click)="optionAchivement(data)">
+              <ion-row no-padding>
+                <ion-col col-4 no-padding>
+                  <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                  <img  class="pictContent" src="assets/imgs/achivement.png" />             
+                </ion-col>
+                <ion-col col-8 no-padding class="wordContent">
+                  <span class="headContent">{{data.achivement}}</span>
+                  <br />
+                  <span class="subheadContent">{{data.form}}</span>
+                  <br />
+                  <span class="time">{{data.year}}</span>                  
+                </ion-col>
+              </ion-row>  
+            </ion-col>
+           
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="tabsProfileContent">
+      <div [hidden]="contact == false">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col *ngFor="let data of contacts" col-6 no-padding class="marginBottom" (click)="optionContact(data)">
+              <ion-row no-padding>
+                <ion-col col-4 no-padding>
+                  <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                  <img  class="pictContent" src="assets/imgs/contact.png" />             
+                </ion-col>
+                <ion-col col-8 no-padding class="wordContent">
+                  <span class="headContent">{{data.contact}}</span>
+                  <br />
+                  <span class="subheadContent">{{data.form}}</span>        
+                </ion-col>
+              </ion-row>  
+            </ion-col>
+           
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+    
+    <button ion-button block color="light" class="buttonAdd" (click)="add()">
+        <span class="buttonWord"><ion-icon  name="md-add-circle"></ion-icon></span>
+    </button>
+  </div>
+
+  <div *ngIf="!post" text-center>
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <div *ngFor="let data of post" class="homeCard">
+    <div class="cardHeader">
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col col-2 no-padding>
+            <img  class="pictHeader" *ngIf="user_photo" [src]="user_photo" />    
+            <img  class="pictHeader" *ngIf="!user_photo" src="assets/imgs/profile.png" />            
+          </ion-col>
+          <ion-col col-8 no-padding class="wordHeader">
+            <span class="nameHeader">{{data.user_name}}</span>
+            <br />
+            <!-- <span class="elseHeader">VP Gojek Indonesia</span>
+            <br /> -->
+            <span class="elseHeader">{{data.timeline_date}}, {{data.timeline_time}}</span>         
+            <!-- <ion-datetime class="elseHeader" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="data.timeline_date"></ion-datetime>          -->
+          </ion-col>
+          <ion-col col-1 text-right (click)="more(data)">
+            <span class="buttonMore"><ion-icon name="md-more"></ion-icon></span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="cardContent">
+      <span class="wordContent">{{data.timeline_description}}</span>
+      <br />
+
+      <!-- pakai slider aja kalau gambar lebih dari satu -->
+      <img  class="pictContentTimeline" *ngIf="data.timeline_photo" [src]="data.timeline_photo" />
+    </div>
+    <div class="cardFooter">
+      <span>{{data.like}} likes </span>
+      <span>.</span>
+      <span> {{data.comments}} comment</span>
+      <hr>
+      <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-4 no-padding>
+              <button ion-button color="gray" clear icon-left block class="buttonCustom">
+                <ion-icon name="md-thumbs-up"></ion-icon>
+                <span class="buttonWord">&nbsp;Like</span>
+              </button>            
+            </ion-col>
+            <ion-col col-4 no-padding>
+              <button ion-button color="gray" clear icon-left block class="buttonCustom">
+                <ion-icon name="md-text"></ion-icon>
+                <span class="buttonWord">&nbsp;Comment</span>
+              </button>         
+            </ion-col>
+            <ion-col col-4 no-padding>
+              <button ion-button color="gray" clear icon-left block class="buttonCustom">
+                <ion-icon name="md-share"></ion-icon>
+                <span class="buttonWord">&nbsp;Share</span>
+              </button>                    
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,58 @@
+page-interview-video {
+    .background{
+        background-color:#2c384e; 
+    }
+    .pictLogo{
+        height: 2em;
+        margin-top: 1vw;
+        margin-left: 2vw;
+
+        position: absolute;
+        right: 1em;
+        bottom: 1em;
+    }
+
+    .title{
+        text-align: center;
+        color: white;
+    }
+
+    .card{
+        margin: 2vw 0;
+    }
+
+    .pict{
+        height: 25vw;
+    }
+
+    .text{
+        font-size: 1em;
+        color: white;
+        padding: 0 2vw;
+    }
+
+    iframe{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .caption{
+        position: absolute;
+        top: 0;
+
+        padding: 0.5em;
+        color: white;
+        background-color: rgba(34, 34, 34, 0.5);
+        border-radius: 0px 50px 15px  0px; 
+    }
+
+    .closeButton{
+        position: absolute;
+        top: 0em;
+        right: 0em;
+        
+        // background-color: green;
+        padding: 2em;
+        border-radius: 0px 0px 0px 20em; 
+    }
+}

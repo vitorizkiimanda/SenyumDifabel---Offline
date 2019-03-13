@@ -1,0 +1,100 @@
+page-create-group {
+    .buttonSave{
+        position: relative;
+        top: 1vw;
+        right: 3vw;
+        text-align: right;
+    }
+
+    .Title{
+        font-size: 1em;
+        color: white;   
+    }
+
+    .buttonWord{
+        text-transform: capitalize;
+        color: white;
+    }
+
+    .groupPict{
+        border-radius: 100%;
+        padding: 2vw;
+        height: 30vw;
+    }
+
+    .listPict{
+        border-radius: 100%;
+        padding: 2vw;
+        width: 100vw;
+    }
+
+    .editIcon{
+        font-size: 1.25em;
+        color: #2c384e;
+        background-color: rgba(128, 128, 128, 0.25);
+        border-radius: 100%;
+        padding: 0.25em 0.35em;
+
+        float: right;
+
+        position: relative;
+        top: 27vw;
+        // right: 20vw;
+    }
+
+    .deleteIcon{
+        font-size: 1.25em;
+        color: #2c384e;
+        background-color: rgba(128, 128, 128, 0.75);
+        border-radius: 100%;
+        padding: 0.25em 0.35em;
+
+        float: right;
+
+        position: relative;
+        top: 5vw;
+        // right: 20vw;
+    }
+
+    .groupName{
+        padding-top: 8vw;
+    }
+
+    .groupNameCounter{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 2vw;
+        color: gray;
+        font-size: 1em;
+    }
+
+    .memberGroup{
+        padding: 2vw 4vw;
+    }
+
+    .memberCounter{
+        font-size: 1.2em;
+        color: #222;
+    }
+
+    .memberAdd{
+        text-transform: capitalize;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: gray;
+        margin: 4vw 0;
+    }
+
+    .memberWarn{
+        padding-top: 5vw;
+        font-size: 0.9em;
+        color: rgba(128, 128, 128, 0.8);
+    }
+
+    .listName{
+        text-overflow: ellipsis; 
+        overflow: hidden; 
+        white-space: nowrap;
+    }
+}

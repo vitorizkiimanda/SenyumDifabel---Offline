@@ -1,0 +1,89 @@
+page-login {
+    .background{
+        min-height: 100vh;
+        background-color: #2c384e;
+    }
+
+    .pictLogo{
+        height: 4em;
+        display: block;
+        margin: auto;
+
+        position: relative;
+        top: 30vw;
+    }
+
+    .form-list{
+        background-color: #2c384e;
+        color: #fcfcfc;
+    }
+
+    .text-input{
+        color: #fcfcfc;
+    }
+
+    .form-input{
+        background-color: #2c384e;
+    }
+
+    .first-input{
+        margin-top: 25vh;
+    }
+
+    .login-button{
+        margin: 5% auto;
+        width: 80vw; 
+    }
+
+    .login-color{
+        background-color: #fe757a;
+    }
+    
+    .icon-size{
+        font-size: 1.75em;
+        color: #b2b2b2;
+    }
+
+    .forget{
+        text-align: center;
+        color: #fcfcfc;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+
+
+    .backgound-footer{
+        background-color: #c1c3c2;
+        font-size: 2em;
+    }
+
+    .footer-text{
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .register-color{
+        color: #f9787b;
+    }
+
+    .tombol {
+        height: 7vw !important;
+        color: #999999;
+
+        position: relative;
+    } 
+    
+    .alert{
+        background-color: #f56576;
+
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    .text-error{
+        color: #fcfcfc;
+    }
+
+}

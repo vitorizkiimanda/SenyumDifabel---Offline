@@ -1,0 +1,49 @@
+page-setting {
+    .invisibleButton {
+        height:10px;
+        width:60px;
+    }
+    .background{
+        background-color: #d1d3d5;
+    }
+
+    .logout{
+        color: #f49898;
+    }
+
+    .account{
+        background-color: white;
+        padding: 2vw 4vw;
+    }
+    
+    .editButton{
+        float: right;
+
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    .name{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .accountItem{
+        font-size: 1em;
+        color: #222;
+    }
+
+    .setting{
+        margin-top: 2vw;
+        background-color: white;
+        padding: 2vw 4vw;
+    }
+
+    .settingItem{
+        padding: 0.5em 0;
+        font-size: 1em;
+        color: #222;
+    }
+}

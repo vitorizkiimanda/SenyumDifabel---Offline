@@ -1,0 +1,48 @@
+<ion-header>
+
+    <ion-navbar color="senyumDifabel">
+      <ion-grid >          
+        <ion-row >
+          <ion-col col-10 >    
+            <ion-title text-center>Edit Profile</ion-title>     
+          </ion-col>
+          <ion-col col-2 text-right no-padding>
+            <button (click)="profileEdit()" class="buttonSave" clear ion-button color="senyumDifabel" medium>
+              <span class="buttonWord">Save</span>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>    
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-icon (click)="updatePicture()" color="dark" class="editIcon" name="md-camera"></ion-icon>
+  
+  <div text-center>
+    <ion-spinner *ngIf="loadingSpinner" class="spinner"></ion-spinner>
+    <img  class="pictProfile" *ngIf="imageFinal" [src]="imageFinal" />    
+    <img  class="pictProfile" *ngIf="!imageFinal" src="assets/imgs/profile.png" />  
+  </div>
+  <br />
+  <div>
+    <ion-item>
+      <ion-label floating><p class="Head">Name</p></ion-label>
+      <ion-input class="Head2" [(ngModel)]="user_name" name="name"  type="text" #nama="ngModel" required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating><p class="Head">Address</p></ion-label>
+      <ion-input class="Head2" [(ngModel)]="user_address" name="address"  type="text" #alamat="ngModel" required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked><p class="Head">Bio</p></ion-label>
+      <ion-textarea type="text" [(ngModel)]="description" autosize placeholder="about my self.."></ion-textarea>
+    </ion-item>
+    
+
+  </div>
+</ion-content>

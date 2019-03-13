@@ -1,0 +1,32 @@
+<!-- <ion-header>
+
+  <ion-navbar color="senyumDifabel">
+    <img src="assets/imgs/logotrans.png" class="pictLogo"/>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+
+  <div class="caption">
+    <span>Neddyana Pahlawaty</span>
+    <br />
+    <span>Pendidikan Luar Biasa, UNJ</span>
+    <br />
+    <span>neddy.yana@gmail.com</span>
+  </div>
+
+  <button class="closeButton" color="danger" ion-button (click)="dismiss()" large>
+    <ion-icon name="md-close"></ion-icon>
+  </button>
+
+  <iframe 
+    width="100%"
+    height="auto"
+    [src]="url ? url : null"
+    (load)="url ? handleIFrameLoadEvent() : null"
+    frameborder="0">
+  </iframe>
+  
+</ion-content>

@@ -1,0 +1,183 @@
+page-job-detail {
+    .invisibleButton {
+        height:10px;
+        width:60px;
+    }
+    .backgroundColor{
+        background-color:#d2d3d4; 
+    }
+
+    .ButtonRight{
+        color: white;
+        font-size: 2em;
+        padding-top: 1vw;
+    }
+
+    .pictLogo{
+        width: 20vw;
+        margin-top: 1vw;
+        margin-left: 2vw;
+    }
+
+    .pictCover{
+        position:relative;
+        z-index:1000; 
+        width: 100vw;
+        height: 17vh;
+    }
+
+    .pict{
+        width: 20vw;
+        border-radius: 100%;
+        display: block;
+        margin: auto;
+
+        position: relative;
+        z-index:2000; 
+        left: 3vw;
+    }
+
+    .main{
+        background-color: white;
+        border-radius: 2.5%;
+
+        position: relative;
+        bottom: 12.5vw;
+
+        margin: 4vw 4vw 0vw 4vw;
+        padding: 0 2vw 2vw 2vw;
+    }
+
+    .text{
+        margin-top: 2vw;
+    }
+
+    .name{
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .position{
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .location{
+        font-size: 1em;
+        font-weight: 500;
+        color: gray;
+    }
+
+    .description{
+        margin-top: 1vw;
+        font-size: 1em;
+        color: #222;
+    }
+
+    .loveIcon{
+        font-size: 1.5em;
+        color: gray;
+        border: solid 1px gray;
+        background-color: white;
+        border-radius: 100%; 
+        padding: 0.25em 0.35em;
+
+        float: right;
+
+        position: relative;
+        top: 10vw;
+        right: 2vw;
+    }
+
+    .loveIconInverse{
+        font-size: 1.5em;
+        color: #2c384e;
+        border: solid 1px #2c384e;
+        background-color: white;
+        border-radius: 100%; 
+        padding: 0.25em 0.35em;
+
+        float: right;
+
+        position: relative;
+        top: 10vw;
+        right: 2vw;
+    }
+
+    .detail{
+        position: relative;
+        bottom: 10vw;
+        padding: 2vw 4vw;
+
+        background-color: white;
+    }
+
+    .numberHeader{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .textHeader{
+        font-size: 0.9em;
+        font-weight: 450;
+        color: #222;
+    }
+
+    .contentHeader{
+        margin: 2vw 0;
+    }
+
+    .contentCenter{
+        border-left: solid 1px rgba(128, 128, 128, 0.25);
+        border-right: solid 1px rgba(128, 128, 128, 0.25); 
+    }
+
+    .buttonDiv{
+        margin: 0vw 10vw;
+    }
+
+    .buttonCustom{
+        height: 2.5em !important;
+    }
+
+    .buttonWord{
+        text-transform: capitalize;
+        font-size: 1.5em;
+    }
+
+    .topic{
+        font-style: italic;
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .criteria{
+        font-style: italic;
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .deadline   {
+        padding: 2vw 0;
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #f87779;
+    }
+
+    .descriptionHeader{
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .descriptionList{
+        font-size: 1em;
+        color: #222;
+    }
+    
+}

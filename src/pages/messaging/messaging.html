@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-navbar color="senyumDifabel">
+      <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-10 no-padding text-center>
+              <ion-searchbar (ionInput)="getItems($event)" placeholder="Search message..."></ion-searchbar>
+            </ion-col>
+            <ion-col col-2 text-center no-padding>
+              <ion-icon (click)="openCreateGroup()" color="dark" class="ButtonRight" name="md-person-add"></ion-icon>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-fab *ngIf="!statusSearch" right bottom>
+    <button (click)="openContact()" ion-fab color="senyumDifabel">
+      <ion-icon name="ios-text-outline"></ion-icon>
+    </button>
+  </ion-fab>
+  <div *ngIf="!statusSearch">
+    <div *ngFor="let data of chats">
+
+      <div *ngIf='data.size=="0"' class="messageCard" (click)="openMessage(data)">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding>
+              <img  class="pictMessage" *ngIf="data.photo" [src]="data.photo" />    
+              <img  class="pictMessage" *ngIf="!data.photo" src="assets/imgs/profile.png" />           
+            </ion-col>
+            <ion-col col-9 no-padding class="contentMessage">
+              <ion-row no-padding>
+                <ion-col col-10 no-padding >
+                  <span class="nameMessage">{{data.name}}</span>            
+                </ion-col>
+                <ion-col col-2 no-padding text-right>
+                  <span class="timeMessage">{{data.time}}</span>              
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <span class="previewMessage">{{data.prev_chat}}</span>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <div *ngIf='data.size!="0"' class="messageCard" (click)="openMessage(2)">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding>
+              <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+              <img  class="pictMessage" src="assets/imgs/bukalapak.png" />             
+            </ion-col>
+            <ion-col col-9 no-padding class="contentMessage">
+              <ion-row no-padding>
+                <ion-col col-10 no-padding >
+                  <span class="nameMessage">Group PSBO (4)</span>            
+                </ion-col>
+                <ion-col col-2 no-padding text-right>
+                  <span class="timeMessage">10:30</span>              
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <span class="previewMessage">Lorem ipsum dolor sit amet, testes adipiscing elit</span>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="statusSearch">
+    <div *ngFor="let data of list_search">
+
+      <div *ngIf='data.size=="0"' class="messageCard" (click)="openMessage(data)">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding>
+              <img  class="pictMessage" *ngIf="data.photo" [src]="data.photo" />    
+              <img  class="pictMessage" *ngIf="!data.photo" src="assets/imgs/profile.png" />           
+            </ion-col>
+            <ion-col col-9 no-padding class="contentMessage">
+              <ion-row no-padding>
+                <ion-col col-10 no-padding >
+                  <span class="nameMessage">{{data.name}}</span>            
+                </ion-col>
+                <ion-col col-2 no-padding text-right>
+                  <span class="timeMessage">{{data.time}}</span>              
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <span class="previewMessage">{{data.prev_chat}}</span>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <div *ngIf='data.size!="0"' class="messageCard" (click)="openMessage(2)">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding>
+              <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+              <img  class="pictMessage" src="assets/imgs/bukalapak.png" />             
+            </ion-col>
+            <ion-col col-9 no-padding class="contentMessage">
+              <ion-row no-padding>
+                <ion-col col-10 no-padding >
+                  <span class="nameMessage">Group PSBO (4)</span>            
+                </ion-col>
+                <ion-col col-2 no-padding text-right>
+                  <span class="timeMessage">10:30</span>              
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <span class="previewMessage">Lorem ipsum dolor sit amet, testes adipiscing elit</span>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </div>
+  </div>  
+
+</ion-content>

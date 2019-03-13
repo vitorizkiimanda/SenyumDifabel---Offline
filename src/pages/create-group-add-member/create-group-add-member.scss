@@ -1,0 +1,76 @@
+page-create-group-add-member {
+    .cardContact{
+        background-color: white;
+        // padding : 2vw 4vw;
+    }
+    
+    .pictHeader{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .wordHeader{
+        margin-top: 2.5vw;
+        margin-left: 2vw;
+    }
+
+    .nameHeader{
+        font-size: 1em;
+        // font-weight: 700;
+        color: #222;
+    }
+
+    .footerAdd{
+        background-color: #414e68;
+        text-align: center;
+        font-size: 1.2em;
+        // font-weight: 700;
+        color: white;
+        padding: 1em 0;
+    }
+
+    // scroller
+    ion-scroll {
+        width: 100vw;
+        display: inline-block;
+        height: 20vh;
+    }
+
+    .scroll-zoom-wrapper{
+        // white-space: nowrap;
+    }
+
+    .options {
+        border-radius: 100%;
+        margin-top: 1vh;
+        height: auto;
+        width : 15vw;
+    }
+
+    // scroller^^^
+
+
+    .deleteIcon{
+        font-size: 1em;
+        color: #2c384e;
+        background-color: rgba(128, 128, 128, 0.75);
+        border-radius: 100%;
+        padding: 0.25em 0.35em;
+
+        float: right;
+
+        position: relative;
+        top: 5vw;
+    }
+
+    .listName{text-overflow: ellipsis; 
+        overflow: hidden; 
+        white-space: nowrap;
+    }
+
+    .listPict{
+        border-radius: 100%;
+        padding: 2vw;
+        width: 100vw;
+    }
+}

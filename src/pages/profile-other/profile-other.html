@@ -1,0 +1,213 @@
+<ion-header>
+  <ion-navbar color="senyumDifabel" text-right>
+      <ion-grid no-padding>          
+          <ion-row no-padding>
+              <img src="assets/imgs/logotrans.png" class="pictLogo"/>
+          </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="backgroundColor">
+<img  class="pictCover" src="assets/imgs/cover.JPG" />
+<div class="mainProfile">
+  <img  class="pictProfile" *ngIf="user_photo" [src]="user_photo" />    
+  <img  class="pictProfile" *ngIf="!user_photo" src="assets/imgs/profile.png" />  
+  <div class="textProfile" text-center>
+    <span class="name">{{name}}</span>
+    <br />
+    <span class="position">{{job}}</span>
+    <br />
+    <span class="location">{{address}}</span>
+    <div class="description">
+      <span>{{bio}}</span>
+    </div>
+  </div>
+</div>
+<div class="detailProfile">
+  <ion-grid no-padding>          
+    <ion-row no-padding text-center>
+      <ion-col (click)="open('follower')" col-6 no-padding class="contentHeader">
+        <span class="numberHeader">{{follower}}</span>
+        <br />
+        <span class="textHeader">Followers</span>            
+      </ion-col>
+      <ion-col (click)="open('following')" col-6 no-padding class="contentHeader contentCenter">
+        <span class="numberHeader">{{following}}</span>
+        <br />
+        <span class="textHeader">Following</span>            
+      </ion-col>
+      <!-- <ion-col (click)="open('company')" col-4 no-padding class="contentHeader">
+        <span class="numberHeader">2</span>
+        <br />
+        <span class="textHeader">Company</span>            
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="statusFollow" text-center class="buttonDiv">
+    <button ion-button block color="senyumDifabel" class="buttonCustom" (click)="follow()"><span class="buttonWord">Follow</span></button>
+  </div>
+
+  <div *ngIf="!statusFollow" text-center class="buttonDiv">
+    <ion-grid no-padding>          
+      <ion-row no-padding text-center>
+        <ion-col col-10 no-padding class="contentHeader">
+          <button (click)="openMessage()" ion-button block outline color="senyumDifabel" class="buttonCustom"><span class="buttonWord">Message</span></button>         
+        </ion-col>
+        <ion-col col-2 no-padding class="contentHeader contentCenter">
+          <button ion-button block outline color="senyumDifabel" class="buttonCustom2" (click)="unfollow()">
+              <span class="buttonWord"><ion-icon  name="md-checkbox-outline"></ion-icon></span></button>        
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <br />
+
+  <!-- <super-tabs  class="tabProfile" id="mainTabs" selectedTabIndex="0" toolbarColor="senyumDifabel" toolbarBackground="white" indicatorColor="senyumDifabel" (tabSelect)="onTabSelect($event)">
+      <super-tab tabsHideOnSubPages="true" [root]="tab1Root" title="Experience" ></super-tab>
+      <super-tab tabsHideOnSubPages="true" [root]="tab2Root" title="Education" ></super-tab>
+      <super-tab tabsHideOnSubPages="true" [root]="tab3Root" title="Skill" ></super-tab>
+      <super-tab tabsHideOnSubPages="true" [root]="tab4Root" title="Achivement" ></super-tab>
+      <super-tab tabsHideOnSubPages="true" [root]="tab5Root" title="Contact" ></super-tab>
+  </super-tabs> -->
+  <div class="tabsProfileContent">
+    <div>
+      <div text-center>
+        <h4>Experience</h4>
+        <hr >
+      </div>
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col *ngFor="let data of experiences" col-6 no-padding class="marginBottom" (click)="detailExperience(data)">
+            <ion-row no-padding>
+              <ion-col col-4 no-padding>
+                <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                <img  class="pictContent" src="assets/imgs/experience.png" />             
+              </ion-col>
+              <ion-col col-8 no-padding class="wordContent">
+                <span class="headContent">{{data.title}}</span>
+                <br />
+                <span class="subheadContent">{{data.description}}</span>
+                <br />
+                <span class="time">{{data.year}}</span>                  
+              </ion-col>
+            </ion-row>  
+          </ion-col>          
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="tabsProfileContent">
+    <div>
+      <div text-center>
+        <h4>Education</h4>
+        <hr >
+      </div>
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col *ngFor="let data of educations" col-6 no-padding class="marginBottom" (click)="detailEducation(data)">
+            <ion-row no-padding>
+              <ion-col col-4 no-padding>
+                <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                <img  class="pictContent" src="assets/imgs/education.png" />             
+              </ion-col>
+              <ion-col col-8 no-padding class="wordContent">
+                <span class="headContent">{{data.school}}</span>
+                <br />
+                <span class="subheadContent">{{data.major}}</span>
+                <br />
+                <span class="time">{{data.year}}</span>                  
+              </ion-col>
+            </ion-row>  
+          </ion-col>          
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="tabsProfileContent">
+    <div>
+      <div text-center>
+        <h4>Skill</h4>
+        <hr >
+      </div>
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col *ngFor="let data of skills" col-6 no-padding class="marginBottom" (click)="detailSkill(data)">
+            <ion-row no-padding>
+              <ion-col col-4 no-padding>
+                <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                <img  class="pictContent" src="assets/imgs/skill.png" />             
+              </ion-col>
+              <ion-col col-8 no-padding class="wordContent">
+                <span class="headContent">{{data.skill}}</span>           
+              </ion-col>
+            </ion-row>  
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="tabsProfileContent">
+    <div>
+      <div text-center>
+        <h4>Achivement</h4>
+        <hr >
+      </div>
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col *ngFor="let data of achievements" col-6 no-padding class="marginBottom" (click)="detailAchivement(data)">
+            <ion-row no-padding>
+              <ion-col col-4 no-padding>
+                <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                <img  class="pictContent" src="assets/imgs/achivement.png" />             
+              </ion-col>
+              <ion-col col-8 no-padding class="wordContent">
+                <span class="headContent">{{data.achivement}}</span>
+                <br />
+                <span class="subheadContent">{{data.form}}</span>
+                <br />
+                <span class="time">{{data.year}}</span>                  
+              </ion-col>
+            </ion-row>  
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="tabsProfileContent">
+    <div>
+      <div text-center>
+        <h4>Contact</h4>
+        <hr >
+      </div>
+      <ion-grid no-padding>          
+        <ion-row no-padding>
+          <ion-col *ngFor="let data of contacts" col-6 no-padding class="marginBottom" (click)="detailContact(data)">
+            <ion-row no-padding>
+              <ion-col col-4 no-padding>
+                <!-- <img *ngIf="data.img" class="pictHeader" src="http://156.67.218.250:81{{data.img}}"/> -->
+                <img  class="pictContent" src="assets/imgs/contact.png" />             
+              </ion-col>
+              <ion-col col-8 no-padding class="wordContent">
+                <span class="headContent">{{data.contact}}</span>
+                <br />
+                <span class="subheadContent">{{data.form}}?</span>        
+              </ion-col>
+            </ion-row>  
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="senyumDifabel">
+      <ion-title text-center>Setting<button ion-button clear class="invisibleButton"></button></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+  <div class="account">
+    <button ion-button color="gray" clear class="editButton">
+      <span class="logout">Edit</span>
+    </button>         
+    <div class="name">
+      Vito Rizki Imanda
+    </div>
+    <div class="accountItem">
+      vitorizkiimanda@gmail.com
+    </div>
+    <div class="accountItem">
+      089657011491
+    </div>
+  </div>
+  <div class="setting">
+    <div class="settingItem">
+      Change Languange
+    </div>
+    <hr>
+    <div class="settingItem">
+      Term of Service
+    </div>
+    <hr>
+    <div class="settingItem">
+      Privacy Policy
+    </div>
+    <hr>
+    <div class="settingItem">
+      <b>Rate SenyumDifabel App</b>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+
+  <ion-navbar (click)="logout()" color="white" text-center>
+    <ion-title><span class="logout">Logout</span></ion-title>
+  </ion-navbar>
+
+</ion-footer>

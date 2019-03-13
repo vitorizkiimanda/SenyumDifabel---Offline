@@ -1,0 +1,61 @@
+page-profile-edit {
+    .buttonSave{
+        position: relative;
+        top: 1vw;
+        right: 3vw;
+        text-align: right;
+    }
+
+    .Title{
+        font-size: 1em;
+        color: white;   
+    }
+
+    .buttonWord{
+        text-transform: capitalize;
+        color: white;
+    }
+
+    .pictProfile{
+        width: 40vw;
+        height: 40vw;
+        border-radius: 100%;
+        display: block;
+        margin: auto;
+
+        position: relative;
+        z-index:2000; 
+        left: 3vw;
+    }
+
+    .editIcon{
+        font-size: 1.5em;
+        color: #2c384e;
+        background-color: rgba(128, 128, 128, 0.25);
+        border-radius: 100%;
+        padding: 0.25em 0.35em;
+
+        float: right;
+
+        position: relative;
+        top: 30vw;
+        right: 20vw;
+    }
+
+    .Head {
+        font-size: 1em;
+        color: gray;
+    }
+    .Head2 {
+        font-size: 1em;
+        color: #2c384e;
+        font-weight: 500;
+    }
+
+    .spinner{
+        position: absolute;
+        top: 20vw;
+
+        z-index: 1000000;
+    }
+}

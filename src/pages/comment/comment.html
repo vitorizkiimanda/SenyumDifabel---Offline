@@ -1,0 +1,115 @@
+<ion-header>
+    <ion-navbar color="senyumDifabel">
+        <ion-title text-center>Comment<button ion-button clear class="invisibleButton"></button></ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="backgroundColor">
+    <div class="homeCard">
+      <div class="cardHeader">
+        <ion-grid no-padding>          
+          <ion-row no-padding>
+            <ion-col col-2 no-padding>
+              <img  class="pictHeader" *ngIf="user_photo" [src]="user_photo" />    
+              <img  class="pictHeader" *ngIf="!user_photo" src="assets/imgs/profile.png" />          
+            </ion-col>
+            <ion-col col-9 no-padding class="wordHeader">
+              <span class="nameHeader">{{user_name}}</span>
+              <br />
+              <!-- <span class="elseHeader">VP Gojek Indonesia</span>
+              <br /> -->
+              <span class="elseHeader">{{timeline_date}}, {{timeline_time}}</span>        
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="cardContent">
+        <span class="wordContent">{{timeline_description}}</span>
+        <br />
+
+        <!-- pakai slider aja kalau gambar lebih dari satu -->
+        <img  class="pictContent" *ngIf="timeline_photo" [src]="timeline_photo" />
+      </div>
+      <div class="cardFooter">
+        <span>{{counterLike}} likes </span>
+        <span>.</span>
+        <span> {{counterComments}} comment</span>
+        <hr>
+        <ion-grid no-padding>          
+            <ion-row no-padding>
+              <ion-col col-4 no-padding>
+                <button *ngIf="allowLike" (click)="addLike()" ion-button color="gray" clear icon-left block class="buttonCustom">
+                  <ion-icon name="md-thumbs-up"></ion-icon>
+                  <span class="buttonWord">&nbsp;Like</span>
+                </button>  
+                <button *ngIf="!allowLike" ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
+                  <ion-icon name="md-thumbs-up"></ion-icon>
+                  <span class="buttonWordBlue">&nbsp;Like</span>
+                </button>            
+              </ion-col>
+              <ion-col col-4 no-padding>
+                <button ion-button color="gray" clear icon-left block class="buttonCustom">
+                  <ion-icon name="md-text"></ion-icon>
+                  <span class="buttonWord">&nbsp;Comment</span>
+                </button>   
+                <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
+                  <ion-icon name="md-text"></ion-icon>
+                  <span class="buttonWord">&nbsp;Comment</span>
+                </button>          -->
+              </ion-col>
+              <ion-col col-4 no-padding>
+                <button (click)="share()" ion-button color="gray" clear icon-left block class="buttonCustom">
+                  <ion-icon name="md-share"></ion-icon>
+                  <span class="buttonWord">&nbsp;Share</span>
+                </button>    
+                <!-- <button ion-button color="senyumDifabel" clear icon-left block class="buttonCustom">
+                  <ion-icon name="md-share"></ion-icon>
+                  <span class="buttonWord">&nbsp;Share</span>
+                </button>                     -->
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+    </div>
+
+    <div *ngFor="let data of comments" class="cardContact">
+      <ion-grid no-padding>          
+        <ion-row no-padding (click)="openProfile()">
+          <ion-col col-1 no-padding>
+            <img  class="pictHeader" *ngIf="data.user_photo" [src]="data.user_photo" />    
+            <img  class="pictHeader" *ngIf="!data.user_photo" src="assets/imgs/profile.png" />           
+          </ion-col>
+          <ion-col col-10 no-padding class="wordHeader">
+            <span class="nameHeader">{{data.user_name}}</span>
+            <br />
+            <span class="elseHeader">{{data.comment}}</span>                
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-right>
+              <span class="elseHeaderDate">{{data.date}}, {{data.time}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <hr>
+    </div>
+  
+  
+  </ion-content>
+  
+  <ion-footer class="footerBackground" no-padding>
+
+    <ion-row no-padding>
+      <ion-col col-1 no-padding text-center>
+        <span class="IconCamera"><ion-icon name="md-camera"></ion-icon></span>
+      </ion-col>
+      <ion-col col-9 no-padding class="inputArea">
+        <ion-textarea (keypress)="sendChat($event.keyCode)" class="inputText" [(ngModel)]="message" name="message" placeholder="Text message.." type="text" #pesan="ngModel" required autosize></ion-textarea>
+      </ion-col>
+      <ion-col col-1 no-padding text-center>
+        <span class="IconSend"><ion-icon (click)="sendChat(13)" name="md-send" class="IconSendSize"></ion-icon></span>
+      </ion-col>
+    </ion-row>
+      
+      
+  </ion-footer>

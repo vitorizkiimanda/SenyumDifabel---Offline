@@ -1,0 +1,42 @@
+page-messaging {
+    .ButtonRight{
+        color: white;
+        font-size: 2em;
+        position: relative;
+        top: 0.35em;
+    }
+
+    .messageCard{
+        background-color: white;
+        padding : 2vw 4vw;
+    }
+
+    .pictMessage{
+        border-radius: 100%;
+        width: 100vw;
+    }
+
+    .contentMessage{
+        margin-top: 1vw;
+        margin-left: 2vw;
+        border-bottom: solid 1px rgba(128, 128, 128, 0.25);
+    }
+
+    .nameMessage{
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .previewMessage{
+        font-size: 1em;
+        color: gray;
+        margin-bottom: 3vw;
+    }
+
+    .timeMessage{
+        font-size: 0.8em;
+        color: gray;
+        float: right;
+    }
+}

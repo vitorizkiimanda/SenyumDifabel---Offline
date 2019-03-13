@@ -1,0 +1,70 @@
+<ion-header>
+  
+    <ion-navbar color="senyumDifabel">
+      <ion-title text-center>Job Details<button ion-button clear class="invisibleButton"></button></ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="backgroundColor">
+      <img  class="pictCover" src="assets/imgs/bukalapakCover.jpg" />
+      <div class="main">
+        <ion-icon *ngIf="!bookmark" (click)="changeBookmark()" color="dark" class="loveIcon" name="md-heart"></ion-icon>
+        <ion-icon *ngIf="bookmark" (click)="changeBookmark()" color="dark" class="loveIconInverse" name="md-heart"></ion-icon>
+        <img  class="pict" src="assets/imgs/bukalapak.png" />
+        <div class="text" text-center>
+          <span class="name">{{company_name}}</span>
+          <br />
+          <span class="position">{{name}}</span>
+          <div class="deadline">
+            <span>{{date}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="description">
+  
+          <div class="descriptionHeader">Deskripsi</div>    
+          <br>    
+          <div class="descriptionList">{{description}}</div>
+          <br>
+  
+          <!-- <div>
+            <div class="descriptionHeader">Kriteria Umum</div>
+            <ul class="descriptionList">
+              <li>Laki-laki</li>
+              <li>usia 20-35 tahun</li>
+              <li>Pendidikan terakhir minimal D3 ( Teknologi Informasi )</li>
+              <li>Diutamakan mempunyai pengalaman bekerja</li>
+            </ul>
+          </div> -->
+          <!-- <div>
+            <div class="descriptionHeader">Kriteria Khusus</div>
+            <ul class="descriptionList">
+              <li>Memiliki skill programming python & PHP</li>
+              <li>Memahami Restful API</li>
+              <li>Berpengalaman dengan MySQL</li>
+              <li>Terbiasa bekerja menggunakan git</li>
+              <li>Dapat bekerjasama dengan kelompok</li>
+            </ul>
+          </div> -->
+          <!-- <div>
+            <div class="descriptionHeader">Catatan Lain</div>
+            <ul class="descriptionList">
+              <li>Penyandang disabilitas dengan mobilitas mandiri</li>
+              <li>Pelamar sesuai akan melalui tahap wawancara</li>
+            </ul>
+          </div> -->
+  
+        </div>      
+        <div text-center class="buttonDiv">
+          <button ion-button (click)="apply()" block color="senyumDifabel" class="buttonCustom" icon-right>
+            <span class="buttonWord">Apply</span>
+            <ion-icon name="md-send"></ion-icon>
+          </button>
+        </div>
+      <br />
+     </div>
+    </ion-content>
+    
